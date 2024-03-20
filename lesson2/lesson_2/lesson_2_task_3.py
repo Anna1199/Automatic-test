@@ -1,4 +1,6 @@
 square=input("a=")
-a=int(square)
+a=square
+a = float(square)
 s=a*a
-print(s)
+import math
+print(math.ceil(s))
