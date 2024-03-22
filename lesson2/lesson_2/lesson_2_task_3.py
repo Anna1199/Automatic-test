@@ -1,6 +1,10 @@
-square=input("a=")
-a=square
-a = float(square)
-s=a*a
 import math
-print(math.ceil(s))
+
+def calculate_square_ceil():
+    square = input("a=")
+    a = float(square)
+    s = a * a
+    print(math.ceil(s))
+    
+
+calculate_square_ceil()
