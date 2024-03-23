@@ -1,11 +1,15 @@
-fizz_buzz1=input("n= ")
-n=int(fizz_buzz1)
+def fizz_buzz():
+   fizz_buzz1 = input("n= ")
+   n = int(fizz_buzz1)
+   for i in range(1, n+1):
+            if (i % 3 == 0) and (i % 5 == 0):
+                print("FizzBuzz")
+            elif i % 5 == 0:
+                print("Buzz")
+            elif i % 3 == 0:
+                print("Fizz")
+            else:
+                print(i)
+   print("Please enter a valid integer.")
 
-if (n % 3 == 0) and (n % 5 == 0):
-    print("FizzBuzz")
-elif n % 5 == 0:
-    print ("Buzz")
-elif n % 3 == 0:
-    print("Fizz")
-else:
-    print(n)
+fizz_buzz()
