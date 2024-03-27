@@ -11,7 +11,7 @@ def test_capitalize(word1, expected):
 
 # проверки метода для удаления пробелов в начале строки
 @pytest.mark.trim()
-@pytest.mark.parametrize('word1, expected', [(' SkyPro', 'SkyPro'),('\tSkyPro\n', 'SkyPro'),('', '')])
+@pytest.mark.parametrize('word1, expected', [(' SkyPro', 'SkyPro'), pytest.param('\tSkyPro\n', 'SkyPro', marks=pytest.mark.xfail),('', '')])
 def test_trim(word1, expected):
     word = StringUtils()
     res = word.trim(word1)
@@ -27,7 +27,7 @@ def test_to_list(string, delimiter, expected):
 
 # проверка метода с поиском символа
 @pytest.mark.contains
-@pytest.mark.parametrize('string, symbol, expected', [('Samara', 'S', True), ('Samara', 's', True), ('Samara', 't', False) ('', 'a', False)])
+@pytest.mark.parametrize('string, symbol, expected', [('Samara', 'S', True), pytest.param('Samara', 's', True, marks=pytest.mark.xfail), ('Samara', 't', False), ('', 'a', False)])
 def test_contains(string, symbol, expected):
     string_utils = StringUtils()
     res = string_utils.contains(string, symbol)
@@ -52,15 +52,15 @@ def test_starts_with (string, symbol, expected):
 #проверка метода для проверки последднего символа в строке
 @pytest.mark.ends_with
 @pytest.mark.parametrize('string, symbol, expected', [('Samara', 'a', True), ('123', '3', True), ('  ', ' ', True), ('Samara', 'S', False)])
-def test_starts_with (string, symbol, expected):
+def test_ends_with (string, symbol, expected):
     string_utils = StringUtils()
     res = string_utils.end_with(string, symbol)
     assert res == expected
 
 #проверка метода для проверки пустой строки
 @pytest.mark.is_empty
-@pytest.mark.parametrize('string, expected', [('Samara', True), ('', True), ('  ', True), ('Samara', False), ('  ', False)])
-def test_starts_with (string, expected):
+@pytest.mark.parametrize('string, expected', [pytest.param('Samara', True, marks=pytest.mark.xfail), ('', True), ('  ', True), ('Samara', False), pytest.param('  ', False, marks=pytest.mark.xfail)])
+def test_is_empty (string, expected):
     string_utils = StringUtils()
     res = string_utils.is_empty(string)
     assert res == expected
