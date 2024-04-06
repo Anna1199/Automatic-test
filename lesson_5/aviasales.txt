@@ -1,0 +1,7 @@
+Локатор логотипа (html-елемент, содержащий в себе значок и слово "авиасейлс") - <span[data-test-id="logo"]>
+Локатор поля Откуда - <input[placeholder="Откуда"]>
+Локатор поля Куда - <input[placeholder="Куда"]>
+Локатор поля Когда - <div class="s__ta_SSbfNo_PsQ7Rdf70_ s__wz46TWgrOGMneOhk9MFQ s__x4KgSIG987qu2AxBtn9k" data-test-id="start-date-value">Когда</div>
+Локатор поля Обратно - <div[data-test-id="end-date-value"]>
+Локатор чек-бокса <svg[width="15"][height="11"]>
+Локатор кнопки Найти билеты - <button[data-test-id="form-submit"]>
